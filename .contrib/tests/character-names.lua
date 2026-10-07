@@ -1,5 +1,25 @@
+-- Flat tooltip and account Summary tests.
 -- Run from the repository root: lua .contrib/tests/character-names.lua [repository-root]
--- Executes the actual flat tooltip processors and account Summary serializers.
+--
+-- Test architecture:
+-- 1. Source: read() loads addon files. The patterns below select the actual
+--    KnownBy/CompletedBy processors and shared name formatter from
+--    src/Settings/Pages/Interface - Information.lua; compile() loads that code.
+-- 2. Environment: fixture() supplies saved characters, exact/normalized realm
+--    names, collection flags, inventory counts and the required addon services.
+--    Each case starts with independent data and API call counters.
+-- 3. Flow: add characters to f.data, call f:run() or f.processors.render(),
+--    then check the resulting tooltip rows. text() joins rows for inspection;
+--    equal() and contains() check exact values or expected text fragments.
+--    Cases check local-realm hiding, foreign realms, full names, colors,
+--    quantities, account notices and profession ranks.
+-- 4. Summary: accountSync() loads the actual serializer/deserializer from
+--    src/UI/Windows/Account Management.lua. Cases check the twelve wire fields,
+--    complete names and clearing cached Identifier values after receiving data.
+--    player-names.lua is loaded in "fixtures" mode to obtain its initializer,
+--    so login output can also be passed through the tooltip and Summary paths.
+-- 5. Results: test() catches assertion failures and prints each case's result.
+--    Any failed case produces a traceback and a nonzero exit after all cases run.
 
 --- Current and maximum ranks in one cached profession.
 ---@class ATTNameTestSkillRank

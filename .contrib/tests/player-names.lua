@@ -1,5 +1,27 @@
--- Loads client-flavor flags from the actual wrapper module and executes player initialization and unit-cache source.
+-- Exercises actual ATT code for player identity and unit-name caching.
 -- Run from the repository root: lua .contrib/tests/player-names.lua [repository-root]
+--
+-- Test architecture:
+-- Code under test:
+--   src/WoW API Wrappers.lua supplies client-build flags and API bindings.
+--   src/base.lua builds app.Me, the class-colored complete name and realm.
+--   AllTheThings.lua's login storage block updates the existing saved player.
+--   src/Classes/CharacterClass.lua supplies CacheCharacterDataFromAPIs.
+--
+-- Setup: initialize(opts) creates fake name, realm, build, GUID, class and race APIs.
+-- Inputs distinguish the complete GetUnitName result from tuple first/second values,
+-- where the second value is a Forever surname or a Retail/Classic realm.
+-- Saved spell/profession data starts intact; the saved name and realm may be stale.
+-- Execution: compile() runs the wrapper module and extracted base/login blocks.
+-- checkIdentity() checks their outputs; unitCache() loads the real cache helper,
+-- which later cases call for player, party1 and raid3 using the same fake APIs.
+-- Assertions compare saved names/realms, colored UI text and API call counts,
+-- and ensure login preserves the existing spell and profession tables.
+-- Loading with "fixtures" returns initialize without running the test cases;
+-- character-names.lua uses this mode to reuse the initialized player in tooltip tests.
+-- test() reports each case and collects assertion failures with tracebacks.
+-- Any failed case produces a nonzero exit after all cases have run.
+
 --- Inputs for native player-name APIs and an optional remote-unit lookup.
 ---@class ATTPlayerNameTestOptions
 ---@field full string Complete player name returned by GetUnitName.

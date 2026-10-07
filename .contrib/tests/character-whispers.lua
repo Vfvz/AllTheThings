@@ -1,5 +1,23 @@
--- Standalone account whisper transport integration tests; all network calls are mocked.
+-- Account whisper transport integration tests.
 -- Run from the repository root: lua .contrib/tests/character-whispers.lua [repository-root]
+--
+-- Test architecture:
+-- Account Management supplies the production transport, ACK/event handlers,
+-- and queue-building, progress, and cancellation callbacks loaded here.
+-- Probe handlers expose reassembled payloads and queued replies to assertions.
+-- Each fixture selects Forever, Retail, or Classic behavior with fresh
+-- characters, linked senders, captured messages, and send/receive queues.
+-- Mock chat and Battle.net APIs record calls; window rebuilds are counted and
+-- popup confirmations run immediately. A fixed clock and manually resumed
+-- coroutine control the production scheduler without a WoW client.
+--
+-- Scenarios send messages, deliver chunks/ACKs through production event
+-- handlers, and inspect queue data before updating or cancelling it.
+-- Assertions cover complete native names, unchanged logical links, progress,
+-- sender filtering, numeric Battle.net keys, and message-size boundaries.
+-- PASS means all assertions in that scenario completed in the mocked environment;
+-- an assertion or error stops the run. No messages are sent over the network.
+
 --- Client behavior selected by the isolated transport fixture.
 ---@alias ATTWhisperTestMode "forever"|"retail"|"classic"
 

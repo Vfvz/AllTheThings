@@ -1,5 +1,21 @@
 -- Standalone regression tests for linked character name and realm identifiers.
 -- Run from the repository root: lua .contrib/tests/linked-character-identifiers.lua [repository-root]
+--
+-- Test architecture:
+-- Loads the actual normalizer and its name/realm helpers from Account Management.
+-- Small fixtures supply client flavor and the current realm without loading the addon.
+-- Input arrays retain an explicit count when a trailing realm argument is nil.
+-- This distinguishes an explicitly missing realm from an omitted realm argument.
+-- The check helper calls the normalizer and verifies both returned values:
+-- the normalized name-realm identifier and the complete name without the realm.
+-- Cases cover full names, delimiters, spacing, invalid inputs, and Forever names.
+--
+-- A second extracted section registers the actual SavedVariables startup callback.
+-- A registration mock captures it, and a fixed clock avoids requesting play time.
+-- Initialization assertions verify that stale identifier caches are cleared while
+-- names, realms, learned-spell progress, and existing play-time data stay intact.
+-- A failed assertion stops the run with a message; success prints the check count.
+
 --- Record-shaped values deliberately rejected as names or explicit realms.
 ---@class ATTIdentifierTestRecordInput
 ---@field name? string Name carried by a malformed table input.
