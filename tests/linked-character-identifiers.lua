@@ -1,5 +1,5 @@
 -- Standalone regression tests for linked character name and realm identifiers.
--- Run from the repository root: lua .contrib/tests/linked-character-identifiers.lua [repository-root]
+-- Run from the repository root: lua tests/linked-character-identifiers.lua [repository-root]
 --
 -- Test architecture:
 -- Loads the actual normalizer and its name/realm helpers from Account Management.

@@ -1,5 +1,5 @@
 -- Account whisper transport integration tests.
--- Run from the repository root: lua .contrib/tests/character-whispers.lua [repository-root]
+-- Run from the repository root: lua tests/character-whispers.lua [repository-root]
 --
 -- Test architecture:
 -- Account Management supplies the production transport, ACK/event handlers,

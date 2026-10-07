@@ -1,5 +1,5 @@
 -- Exercises actual ATT code for player identity and unit-name caching.
--- Run from the repository root: lua .contrib/tests/player-names.lua [repository-root]
+-- Run from the repository root: lua tests/player-names.lua [repository-root]
 --
 -- Test architecture:
 -- Code under test:

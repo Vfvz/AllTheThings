@@ -1,5 +1,5 @@
 -- Flat tooltip and account Summary tests.
--- Run from the repository root: lua .contrib/tests/character-names.lua [repository-root]
+-- Run from the repository root: lua tests/character-names.lua [repository-root]
 --
 -- Test architecture:
 -- 1. Source: read() loads addon files. The patterns below select the actual
@@ -282,7 +282,7 @@ local function accountSync()
 	return compile(definitions.."\nlocal ser,dser={},{}\n"..serializers.."\nreturn {serialize=serializers.Summary,deserialize=deserializers.Summary}","actual-account-Summary",env)()
 end
 ---@type ATTPlayerNameTestInitializer
-local initializePlayer=compile(read(".contrib/tests/player-names.lua"),"player-name-fixtures")("fixtures",root)
+local initializePlayer=compile(read("tests/player-names.lua"),"player-name-fixtures")("fixtures",root)
 local tests,failures=0,{}
 --- Executes one named case and accumulates failures without stopping later cases.
 ---@param name string Behavior printed with the PASS or FAIL result.
