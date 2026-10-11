@@ -335,6 +335,12 @@ maproot(MAP.KALIMDOR, MAP.DUROTAR, {
 							i(5778),	-- Primitive Walking Stick
 						},
 					}),
+					q(97279, {	-- Wayward Weapons
+						["qg"] = 3143,	-- Gornek
+						["coord"] = { 42.0, 68.4, MAP.DUROTAR },
+						["timeline"] = { TIMELINE.ADDED_1_60_1 },
+						["races"] = HORDE_ONLY,
+					}),
 					q(4641, {	-- Your Place In The World
 						["altQuests"] = { 787 },	-- The New Horde
 						["qg"] = 10176,	-- Kaltunk
@@ -395,6 +401,20 @@ maproot(MAP.KALIMDOR, MAP.DUROTAR, {
 			-- #endif
 		}),
 		n(QUESTS, {
+			q(99048, {	-- A Missing Hand
+				["qg"] = 3142,	-- Orgnil Soulscar
+				["coord"] = { 52.2, 43.2, MAP.DUROTAR },
+				["timeline"] = { TIMELINE.ADDED_1_60_1 },
+				["races"] = HORDE_ONLY,
+				["lvl"] = 9,
+			}),
+			q(96873, {	-- A Pain in the Neck
+				["qg"] = 266881,	-- Pa'zula
+				["coord"] = { 56.4, 73.6, MAP.DUROTAR },
+				["timeline"] = { TIMELINE.ADDED_1_60_1 },
+				["races"] = HORDE_ONLY,
+				["lvl"] = 5,
+			}),
 			q(2161, {	-- A Peon's Burden
 				["qg"] = 6786,	-- Ukor
 				["qi"] = 7629,	-- Ukor's Burden
@@ -434,6 +454,16 @@ maproot(MAP.KALIMDOR, MAP.DUROTAR, {
 				["coord"] = { 49.6, 50.4, MAP.ORGRIMMAR },
 				["races"] = HORDE_ONLY,
 				["lvl"] = 4,
+			}),
+			q(97223, {	-- Bloodtalon Matriarch
+				["qg"] = 7953,	-- Xar'Ti
+				["coord"] = { 55.2, 75.4, MAP.DUROTAR },
+				["timeline"] = { TIMELINE.ADDED_1_60_1 },
+				["races"] = HORDE_ONLY,
+				["lvl"] = 5,
+				["groups"] = {
+					i(281267),	-- Raptorscale Pants
+				},
 			}),
 			q(815, {	-- Break a Few Eggs
 				["qg"] = 3191,	-- Cook Torka
@@ -698,6 +728,23 @@ maproot(MAP.KALIMDOR, MAP.DUROTAR, {
 					i(6636),	-- Fire Sapta
 				},
 			}),
+			q(96822, {	-- For Honor
+				["qg"] = 266940,	-- Turroc
+				["coord"] = { 54.0, 42.4, MAP.DUROTAR },
+				["timeline"] = { TIMELINE.ADDED_1_60_1 },
+				["races"] = HORDE_ONLY,
+				["lvl"] = 3,
+			}),
+			q(97225, {	-- Forgotten Loa Idols
+				["qg"] = 3304,	-- Master Vornal
+				["coord"] = { 55.8, 74.4, MAP.DUROTAR },
+				["timeline"] = { TIMELINE.ADDED_1_60_1 },
+				["races"] = HORDE_ONLY,
+				["lvl"] = 4,
+				["groups"] = {
+					i(281268),	-- Depleted Ritual Band
+				},
+			}),
 			q(825, {	-- From The Wreckage....
 				["sourceQuest"] = 784,	-- Vanquish the Betrayers
 				["qg"] = 3139,	-- Gar'Thok
@@ -769,6 +816,12 @@ maproot(MAP.KALIMDOR, MAP.DUROTAR, {
 					i(9513),	-- Ley Staff
 				},
 			}),
+			q(96821, {	-- Legging It
+				["qg"] = 3194,	-- Vel'rin Fang
+				["coord"] = { 55.8, 74.0, MAP.DUROTAR },
+				["timeline"] = { TIMELINE.ADDED_1_60_1 },
+				["races"] = HORDE_ONLY,
+			}),
 			q(816, {	-- Lost But Not Forgotten
 				["qg"] = 3193,	-- Misha Tor'kren
 				["coord"] = { 43.10, 30.24, MAP.DUROTAR },
@@ -783,6 +836,17 @@ maproot(MAP.KALIMDOR, MAP.DUROTAR, {
 						},
 					}),
 					i(4944),	-- Handsewn Cloak
+				},
+			}),
+			q(99123, {	-- Lost in the Shadows
+				["qg"] = 275811,	-- Pal'juh
+				["coord"] = { 46.2, 78.6, MAP.DUROTAR },
+				["timeline"] = { TIMELINE.ADDED_1_60_1 },
+				["races"] = HORDE_ONLY,
+				["lvl"] = 4,
+				["groups"] = {
+					i(286728),	-- Kolkar Hammer
+					i(286729),	-- Kolkar Bow
 				},
 			}),
 			q(828, {	-- Margoz
@@ -952,6 +1016,16 @@ maproot(MAP.KALIMDOR, MAP.DUROTAR, {
 				["isBreadcrumb"] = true,
 				["lvl"] = 10,
 			}),
+			q(97282, {	-- Stormy Potential
+				["qg"] = 3293,	-- Rezlak
+				["coord"] = { 46.4, 23.0, MAP.DUROTAR },
+				["timeline"] = { TIMELINE.ADDED_1_60_1 },
+				["races"] = HORDE_ONLY,
+				["lvl"] = 7,
+				["groups"] = {
+					i(281274),	-- Makeshift Stormcaller
+				},
+			}),
 			q(6062, {	-- Taming the Beast (1/3)
 				["sourceQuests"] = {
 					6068,	-- The Hunter's Path [Orgrimmar]
@@ -1078,6 +1152,38 @@ maproot(MAP.KALIMDOR, MAP.DUROTAR, {
 				["classes"] = { ROGUE },
 				["isBreadcrumb"] = true,
 				["lvl"] = 10,
+			}),
+			q(96825, {	-- This Fruit Could Bite Back
+				["qg"] = 3191,	-- Cook Torka
+				["coord"] = { 51.2, 42.4, MAP.DUROTAR },
+				["timeline"] = { TIMELINE.ADDED_1_60_1 },
+				["races"] = HORDE_ONLY,
+				["lvl"] = 3,
+			}),
+			q(99049, {	-- Threat from Below
+				["qg"] = 275657,	-- Heglan Shadeeye
+				["coord"] = { 58.6, 45.6, MAP.DUROTAR },
+				["timeline"] = { TIMELINE.ADDED_1_60_1 },
+				["races"] = HORDE_ONLY,
+				["lvl"] = 9,
+			}),
+			q(99051, {	-- Threat from Below
+				["qg"] = 3142,	-- Orgnil Soulscar
+				["coord"] = { 52.2, 43.2, MAP.DUROTAR },
+				["timeline"] = { TIMELINE.ADDED_1_60_1 },
+				["races"] = HORDE_ONLY,
+				["lvl"] = 9,
+			}),
+			q(99052, {	-- Threat from Below
+				["qg"] = 3142,	-- Orgnil Soulscar
+				["coord"] = { 52.2, 43.2, MAP.DUROTAR },
+				["timeline"] = { TIMELINE.ADDED_1_60_1 },
+				["races"] = HORDE_ONLY,
+				["lvl"] = 10,
+				["groups"] = {
+					i(286730),	-- Pristine Orcish Dagger
+					i(286731),	-- Aggor's Refitted Belt
+				},
 			}),
 			q(786, {	-- Thwarting Kolkar Aggression
 				-- ["sourceQuest"] = 785,	-- A Strategic Alliance [didn't make it into Classic]
