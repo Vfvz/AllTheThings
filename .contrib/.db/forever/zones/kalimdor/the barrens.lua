@@ -2547,7 +2547,7 @@ maproot(MAP.KALIMDOR, MAP.THE_BARRENS, {
 			q(1505, {	-- Veteran Uzzek
 				["altQuests"] = { 1502, 1819 },	-- Thun'grim Firegaze / Ulag the Cleaver
 				["qgs"] = {
-					3170,	-- Tarshaw Jaggedscar
+					3169,	-- Tarshaw Jaggedscar
 					3354,	-- Sorek
 					3063,	-- Krang Stonehoof
 				},

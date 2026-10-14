@@ -502,7 +502,7 @@ maproot(MAP.ZEPHRAS_ISLE, {
 			}),
 			q(92646, {	-- Confront Lorthuna
 				sourceQuest = 93958,	-- The Inner Sanctum
-				qg = 252383,	-- Valennia Stormfist
+				qg = 253590,	-- Valennia Stormfist
 				coord = { 65.2, 50.4, MAP.ZEPHRAS_ISLE },
 				races = HORDE_ONLY,
 				lvl = 7,
